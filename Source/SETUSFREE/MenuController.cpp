@@ -19,6 +19,7 @@ void AMenuController::REFRESH()
 	Request->SetHeader("User-Agent", "ppcGameClient/0.0.6");
 	Request->SetHeader("Content-Type", "application/x-www-form-urlencoded");
 	Request->OnProcessRequestComplete().BindUObject(this, &AMenuController::REFRESH_RESPONSE);
+	
 	if (!Request->ProcessRequest())
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, "ProcessRequest Failed - Get Games");
